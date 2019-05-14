@@ -1,0 +1,10 @@
+server:
+  port: 8761
+
+eureka:
+  client:
+    registerWithEureka: false # Don't register yourself with Eureka service
+    fetchRegistry: false # Don't cache registry information locally
+  server:
+    waitTimeInMsWhenSyncEmpty: 5 # Initial time to wait before server takes requests. (default is 5 min)
+    peerNodeReadTimeoutMs: 5000

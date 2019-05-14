@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: configuration-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/MrImamBux/services-configuration.git
+          defaultLabel: master
+          searchPaths: licensing-service, organization-service, routing-service
+        encrypt:
+          # to disable decryption of the key within own service. It should be decrypted by the client with the right symmetric key
+          enabled: false
+
+# ideally, it should be provided by environment variable, it is a symmetric key used for encryption
+encrypt:
+  key: ${ENCRYPT_KEY}

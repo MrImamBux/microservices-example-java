@@ -1,0 +1,15 @@
+environment: DEFAULT
+
+# Database
+spring.datasource.initialization-mode: always
+spring.datasource.url: jdbc:postgresql://localhost:5432/etecture_default
+spring.datasource.username: ibux
+# Symmetric encryption: Generated with setup of JCE (Java Cryptography Extension) jars and Spring Cloud Config Server's /encrypt URL
+spring.datasource.password: "{cipher}bb87da01fe204aafa31dd8ce336587b90889c0bbb735d48c7c603114e7f1ef61"
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation: true
+
+# user info uri available at security service
+security.oauth2.resource.userInfoUri: http://localhost:8901/user
+
+logging.level.de.etecture.microservices.organizationservice: DEBUG
+

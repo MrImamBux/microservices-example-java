@@ -1,0 +1,13 @@
+environment: PROD
+
+zuul.ignored-services: "*"
+zuul.prefix: /api
+zuul.routes.organization-service: /organization/**
+zuul.routes.licensing-service: /licensing/**
+zuul.routes.security-service: /security/**
+
+# blocks the sensitive headers, allow others (Authentication header) absence of this property blocks all headers
+zuul.sensitiveHeaders: Cookie,Set-Cookie
+
+# Increase the Hystrix timeout to 60s (globally)
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000

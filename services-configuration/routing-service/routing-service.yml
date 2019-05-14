@@ -1,0 +1,16 @@
+environment: DEFAULT
+
+zuul.ignored-services: "*"
+zuul.prefix: /api
+zuul.routes.organization-service: /organization/**
+zuul.routes.licensing-service: /licensing/**
+zuul.routes.security-service: /security/**
+
+# blocks the sensitive headers, allow others (Authentication header) absence of this property blocks all headers
+zuul.sensitiveHeaders: Cookie,Set-Cookie
+
+management.endpoints.web.exposure.include: "*"
+
+
+
+logging.level.de.etecture.microservices.routingservice: DEBUG

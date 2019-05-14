@@ -1,0 +1,26 @@
+spring:
+  application:
+    # use this name for the service for external services
+    name: licensing-service
+  cloud:
+    config:
+      # configuration is provided from external configuration server
+      enabled: true
+      uri: http://localhost:8888
+
+  profiles:
+    # load default profile for configuration of the service
+    active: default
+
+  # server for caching the organization service data
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        maxIdle: 15
+        minIdle: 5
+
+# symmetric key used to decrypt the credentials provided by configuration server
+encrypt:
+  key: ${ENCRYPT_KEY}

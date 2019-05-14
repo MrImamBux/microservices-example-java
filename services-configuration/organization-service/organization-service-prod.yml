@@ -1,0 +1,10 @@
+environment: PROD
+
+## Database
+spring.datasource.initialization-mode: always
+spring.datasource.url: jdbc:postgresql://database:5432/etecture_prod
+spring.datasource.username: postgres
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation: true
+
+# user info uri available at security service
+security.oauth2.resource.userInfoUri: http://security-service:8901/user

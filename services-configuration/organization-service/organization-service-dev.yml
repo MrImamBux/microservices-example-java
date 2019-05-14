@@ -1,0 +1,13 @@
+environment: DEV
+
+## Database
+spring.datasource.initialization-mode: always
+spring.datasource.url: jdbc:postgresql://database:5432/etecture_dev
+spring.datasource.username: postgres
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation: true
+spring.jpa.show-sql: true
+
+# user info uri available at security service
+security.oauth2.resource.userInfoUri: http://security-service:8901/user
+
+logging.level.de.etecture.microservices.organizationservice: DEBUG

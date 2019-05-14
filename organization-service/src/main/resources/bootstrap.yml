@@ -1,0 +1,23 @@
+spring:
+
+  application:
+    # use this name for the service for external services
+    name: organization-service
+
+  cloud:
+    config:
+      # configuration is provided from external configuration server
+      enabled: true
+      uri: http://localhost:8888
+
+  profiles:
+    # load default profile for configuration of the service
+    active: default
+
+  main:
+    allowBeanDefinitionOverriding: true
+
+# symmetric key used to decrypt the credentials provided by configuration server
+encrypt:
+  key: ${ENCRYPT_KEY}
+
